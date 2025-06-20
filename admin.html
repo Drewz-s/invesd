@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestPro - Админ панель</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="admin-body">
+    <div class="admin-sidebar">
+        <div class="admin-header">
+            <h3>Админ панель</h3>
+        </div>
+        
+        <nav class="admin-nav">
+            <ul>
+                <li class="active" data-section="admin-dashboard"><i class="fas fa-tachometer-alt"></i> Статистика</li>
+                <li data-section="admin-users"><i class="fas fa-users"></i> Пользователи</li>
+                <li data-section="admin-chat"><i class="fas fa-comments"></i> Чат поддержки</li>
+                <li data-section="admin-transactions"><i class="fas fa-exchange-alt"></i> Транзакции</li>
+                <li id="adminLogout"><i class="fas fa-sign-out-alt"></i> Выход</li>
+            </ul>
+        </nav>
+    </div>
+    
+    <main class="admin-main">
+        <header class="admin-main-header">
+            <h2 id="adminSectionTitle">Статистика</h2>
+        </header>
+        
+        <div class="admin-content-section active" id="adminDashboardSection">
+            <div class="admin-stats">
+                <div class="admin-stat-card">
+                    <h3>Всего пользователей</h3>
+                    <p id="totalUsers">0</p>
+                </div>
+                <div class="admin-stat-card">
+                    <h3>Новых сегодня</h3>
+                    <p id="newUsersToday">0</p>
+                </div>
+                <div class="admin-stat-card">
+                    <h3>Активных вкладов</h3>
+                    <p id="activeInvestments">0</p>
+                </div>
+                <div class="admin-stat-card">
+                    <h3>Завершенных вкладов</h3>
+                    <p id="completedInvestments">0</p>
+                </div>
+                <div class="admin-stat-card">
+                    <h3>Общий оборот</h3>
+                    <p id="totalTurnover">0 ₽</p>
+                </div>
+                <div class="admin-stat-card">
+                    <h3>Выплачено</h3>
+                    <p id="totalWithdrawn">0 ₽</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="admin-content-section" id="adminUsersSection">
+            <div class="admin-search">
+                <input type="text" id="userSearch" placeholder="Поиск по ID или логину">
+                <button id="searchUserBtn"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="admin-users-list">
+                <!-- Будет заполнено JS -->
+            </div>
+        </div>
+        
+        <div class="admin-content-section" id="adminChatSection">
+            <div class="admin-chat-container">
+                <div class="chat-messages" id="adminChatMessages">
+                    <!-- Сообщения чата -->
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="adminChatInput" placeholder="Введите сообщение...">
+                    <button id="adminSendMessage"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="admin-content-section" id="adminTransactionsSection">
+            <div class="admin-transactions-actions">
+                <button id="sendMoneyBtn" class="admin-action-btn">
+                    <i class="fas fa-money-bill-wave"></i> Отправить деньги
+                </button>
+            </div>
+            
+            <div class="admin-transactions-list">
+                <!-- Список транзакций -->
+            </div>
+        </div>
+    </main>
+    
+    <!-- Модальное окно отправки денег -->
+    <div class="admin-modal" id="sendMoneyModal">
+        <div class="admin-modal-content">
+            <span class="close-admin-modal">&times;</span>
+            <h3>Отправить деньги пользователю</h3>
+            <div class="form-group">
+                <input type="text" id="sendMoneyUserId" placeholder="ID пользователя">
+            </div>
+            <div class="form-group">
+                <input type="number" id="sendMoneyAmount" placeholder="Сумма">
+            </div>
+            <button id="confirmSendMoney" class="admin-submit-btn">Отправить</button>
+        </div>
+    </div>
+    
+    <script src="js/storage.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

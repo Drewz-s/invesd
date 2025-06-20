@@ -1,0 +1,107 @@
+.auth-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-container {
+    background-color: rgba(26, 26, 26, 0.9);
+    border-radius: 15px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 450px;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--primary-color);
+    backdrop-filter: blur(10px);
+}
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 0.8rem;
+    text-align: center;
+    background: none;
+    color: var(--light-color);
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.auth-tab.active {
+    border-bottom: 3px solid var(--primary-color);
+    color: var(--primary-light);
+}
+
+.auth-content {
+    position: relative;
+    min-height: 300px;
+}
+
+.auth-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.auth-form.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.btn-auth {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 0.8rem;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: 1rem;
+    width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-auth:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(106, 0, 255, 0.4);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.form-checkbox {
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+.policy-link {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+.auth-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
